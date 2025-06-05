@@ -1,0 +1,10 @@
+[project]
+name = "page"
+version = "0.1.0"
+description = "My personal page project"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "mistune",
+    "fastapi[standard,standart]",
+]
