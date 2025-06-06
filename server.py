@@ -1,6 +1,6 @@
 from pages import index_page, md_page
 from fastapi import FastAPI
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
@@ -16,6 +16,9 @@ app.add_middleware(
         allow_headers=["*"],
         )
 
+@app.get("/media/{filename}")
+def media(filename: str):
+    return FileResponse("./blog/media/" + filename)
 
 @app.get("/")
 def index():
